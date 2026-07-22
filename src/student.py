@@ -4,6 +4,10 @@ class Student:
         self.name = name
         self.marks = marks
 
+    def update(self, name, marks):
+        self.name = name
+        self.marks = marks
+
     def display(self):
         print(f"ID: {self.student_id}")
         print(f"Name: {self.name}")
