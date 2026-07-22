@@ -20,6 +20,17 @@ pipeline {
                 bat '"C:\\Users\\rehma\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe" -m pytest'
             }
         }
+    }
 
+    post {
+        success {
+            echo 'Build completed successfully!'
+        }
+        failure {
+            echo 'Build failed. Please check the console output.'
+        }
+        always {
+            echo 'Pipeline execution finished.'
+        }
     }
 }
