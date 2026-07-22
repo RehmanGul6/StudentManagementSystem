@@ -2,19 +2,28 @@ from student import Student
 from grading import calculate_grade
 
 def main():
-    student1 = Student(101, "Ali", 88)
-    student2 = Student(102, "Sara", 95)
-    student3 = Student(103, "Ahmed", 72)
+    students = [
+        Student(101, "Ali", 88),
+        Student(102, "Sara", 95),
+        Student(103, "Ahmed", 72),
+        Student(104, "Fatima", 65),
+        Student(105, "Hassan", 58),
+        Student(106, "Ayesha", 81),
+        Student(107, "Bilal", 91),
+        Student(108, "Zain", 77)
+    ]
 
-    students = [student1, student2, student3]
-
-    print("===== Student Result Management System =====\n")
+    print("=" * 55)
+    print("          Student Result Management System")
+    print("=" * 55)
+    print(f"{'ID':<6}{'Name':<12}{'Marks':<10}{'Grade'}")
+    print("-" * 55)
 
     for student in students:
-        student.display()
         grade = calculate_grade(student.marks)
-        print(f"Grade: {grade}")
-        print("-" * 30)
+        print(f"{student.student_id:<6}{student.name:<12}{student.marks:<10}{grade}")
+
+    print("=" * 55)
 
 if __name__ == "__main__":
     main()
