@@ -5,19 +5,19 @@ pipeline {
 
         stage('Install Dependencies') {
             steps {
-                bat 'python -m pip install -r requirements.txt'
+                bat 'py -m pip install -r requirements.txt'
             }
         }
 
         stage('Run Application') {
             steps {
-                bat 'python src\\main.py'
+                bat 'py src\\main.py'
             }
         }
 
         stage('Run Tests') {
             steps {
-                bat 'python -m pytest'
+                bat 'py -m pytest'
             }
         }
     }
